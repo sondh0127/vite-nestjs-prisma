@@ -1,7 +1,13 @@
 import { defineConfig } from 'vite';
 import { VitePluginNode } from 'vite-plugin-node';
+import { resolve } from 'path';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@/': `${resolve(__dirname, 'src')}/`,
+    },
+  },
   plugins: [
     ...VitePluginNode({
       adapter: 'nest',
